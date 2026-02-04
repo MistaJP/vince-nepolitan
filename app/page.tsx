@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -45,7 +46,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="aspect-[4/5] bg-gradient-to-br from-gray-900 to-black rounded-lg flex items-center justify-center">
+            <div className="aspect-[4/5] bg-gradient-to-br from-gray-900 to-black rounded-lg flex items-center justify-center overflow-hidden">
               <div className="text-center text-white p-8">
                 <p className="text-gold-500 text-sm uppercase tracking-wider mb-2">Photo</p>
                 <p className="text-gray-500">Vince Nepolitan</p>
@@ -92,12 +93,12 @@ export default function Home() {
 
           <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
             <div className="grid md:grid-cols-2">
-              <div className="bg-black p-12 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h4 className="text-4xl md:text-5xl font-black mb-2">RENOVATE</h4>
-                  <h4 className="text-4xl md:text-5xl font-black text-gold-500 mb-4">ME</h4>
-                  <p className="text-gray-400">By Vince Nepolitan</p>
-                </div>
+              <div className="bg-black p-8 flex items-center justify-center">
+                <img 
+                  src="/book-cover.jpg" 
+                  alt="Renovate Me by Vince Nepolitan" 
+                  className="max-h-[500px] w-auto shadow-2xl rounded"
+                />
               </div>
 
               <div className="p-12 flex flex-col justify-center">
