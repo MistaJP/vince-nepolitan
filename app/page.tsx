@@ -1,39 +1,52 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex flex-col">
-      {/* HERO - Big Bold Quote */}
-      <section className="bg-black-primary min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-gray-900"></div>
-        <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-8">
-            <span className="text-gold-500">&ldquo;When you want to CHANGE</span>
-            <br />
-            as bad as you want to BREATHE,
-            <br />
-            <span className="text-gold-500">then you&apos;ll be RENOVATED&rdquo;</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto">
-            Vince Nepolitan | Bestselling Author & Motivational Speaker
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/speaking"
-              className="inline-flex items-center justify-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-black font-black text-lg uppercase tracking-wider rounded transition-colors"
-            >
-              Book Vince to Speak
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black font-bold text-lg uppercase tracking-wider rounded transition-colors"
-            >
-              Meet Vince
-            </Link>
+      {/* HERO - With Vince's Photo */}
+      <section className="bg-black-primary min-h-screen flex items-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black to-transparent z-10"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/vince.jpg')" }}
+          ></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent"></div>
+        </div>
+
+        <div className="relative z-20 max-w-7xl mx-auto px-4 w-full">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-8">
+              <span className="text-gold-500">RENOVATE</span>
+              <br />
+              YOUR LIFE
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-400 mb-12">
+              From the streets of Las Vegas to bestselling author — 
+              Vince Nepolitan shares his journey from pain to purpose.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/speaking"
+                className="inline-flex items-center justify-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-black font-black text-lg uppercase tracking-wider rounded transition-colors"
+              >
+                Book Vince to Speak
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black font-bold text-lg uppercase tracking-wider rounded transition-colors"
+              >
+                His Story
+              </Link>
+            </div>
           </div>
+        </div>
+
+        {/* Mobile Vince Image */}
+        <div className="lg:hidden absolute bottom-0 right-0 w-64 opacity-30">
+          <img src="/vince.jpg" alt="Vince Nepolitan" className="w-full" />
         </div>
       </section>
 
@@ -46,11 +59,12 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="aspect-[4/5] bg-gradient-to-br from-gray-900 to-black rounded-lg flex items-center justify-center overflow-hidden">
-              <div className="text-center text-white p-8">
-                <p className="text-gold-500 text-sm uppercase tracking-wider mb-2">Photo</p>
-                <p className="text-gray-500">Vince Nepolitan</p>
-              </div>
+            <div className="relative">
+              <img 
+                src="/vince.jpg" 
+                alt="Vince Nepolitan" 
+                className="w-full rounded-lg shadow-2xl"
+              />
             </div>
 
             <div className="space-y-6">
