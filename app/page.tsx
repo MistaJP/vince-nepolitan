@@ -3,83 +3,50 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex flex-col">
-      {/* HERO - With Animated Background */}
+      {/* HERO - With Faded Vince Image */}
       <section className="bg-black-primary min-h-screen flex items-center relative overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-gray-900"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 hidden lg:block">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: "url('/vince.jpg')" }}
+          ></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
         </div>
 
-        {/* Floating Particles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-gold-500 rounded-full"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animation: `float ${3 + Math.random() * 4}s ease-in-out infinite`,
-                animationDelay: `${Math.random() * 5}s`,
-                opacity: 0.3 + Math.random() * 0.4,
-              }}
-            />
-          ))}
-        </div>
-
-        <div className="relative z-20 max-w-7xl mx-auto px-4 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Text */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-8">
-                <span className="text-gold-500">RENOVATE</span>
-                <br />
-                YOUR LIFE
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-xl">
-                From the streets of Las Vegas to bestselling author — 
-                Vince Nepolitan shares his journey from pain to purpose.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Link
-                  href="/speaking"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-black font-black text-lg uppercase tracking-wider rounded transition-colors"
-                >
-                  Book Vince to Speak
-                </Link>
-                <Link
-                  href="/about"
-                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black font-bold text-lg uppercase tracking-wider rounded transition-colors"
-                >
-                  His Story
-                </Link>
-              </div>
-            </div>
-
-            {/* Right: Vince with Effects */}
-            <div className="relative hidden lg:block">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[500px] h-[500px] bg-gradient-radial from-gold-500/20 via-gold-500/5 to-transparent rounded-full animate-pulse"></div>
-              </div>
-              
-              <div className="relative z-10">
-                <img 
-                  src="/vince.jpg" 
-                  alt="Vince Nepolitan" 
-                  className="w-full max-w-md mx-auto drop-shadow-2xl"
-                  style={{
-                    filter: 'drop-shadow(0 0 30px rgba(245,158,11,0.3))',
-                  }}
-                />
-              </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 w-full">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-8">
+              <span className="text-gold-500">RENOVATE</span>
+              <br />
+              YOUR LIFE
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-gray-400 mb-12">
+              From the streets of Las Vegas to bestselling author — 
+              Vince Nepolitan shares his journey from pain to purpose.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href="/speaking"
+                className="inline-flex items-center justify-center px-8 py-4 bg-gold-500 hover:bg-gold-600 text-black font-black text-lg uppercase tracking-wider rounded transition-colors"
+              >
+                Book Vince to Speak
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-black font-bold text-lg uppercase tracking-wider rounded transition-colors"
+              >
+                His Story
+              </Link>
             </div>
           </div>
+        </div>
+
+        {/* Mobile Vince Image */}
+        <div className="lg:hidden absolute bottom-0 right-0 w-64 opacity-20">
+          <img src="/vince.jpg" alt="Vince Nepolitan" className="w-full" />
         </div>
       </section>
 
