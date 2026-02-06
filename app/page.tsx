@@ -22,9 +22,13 @@ export default function Home() {
               YOUR LIFE
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-400 mb-12">
-              From the streets of Las Vegas to bestselling author — 
+            <p className="text-xl md:text-2xl text-gray-400 mb-4">
+              From the streets of Las Vegas to bestselling author —
               Vince Nepolitan shares his journey from pain to purpose.
+            </p>
+
+            <p className="text-lg md:text-xl text-gold-400 italic font-semibold mb-12">
+              &ldquo;Your past does not define your future. Every setback is a setup for a comeback.&rdquo;
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
